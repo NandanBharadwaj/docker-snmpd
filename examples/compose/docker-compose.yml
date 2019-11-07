@@ -1,0 +1,15 @@
+version: "3.2"
+
+services:
+  snmpd:
+    image: crazymax/snmpd
+    container_name: snmpd
+    privileged: true
+    ports:
+      - target: 161
+        published: 161
+        protocol: udp
+    volumes:
+      - "/:/rootfs:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    restart: always
