@@ -57,7 +57,7 @@ RUN apk add --update --no-cache \
   && make install \
   && ln -s /usr/local/net-snmp/bin/* /usr/local/bin/ \
   && apk del build-dependencies \
-  && rm -rf /tmp/* /var/cache/apk/*
+  && rm -rf /var/cache/apk/*
 
 COPY assets /
 

@@ -5,7 +5,7 @@
 
 ## Features
 
-* SNMP daemon patched to be able to monitor on CoreOS (use `/rootfs/{dev|etc|proc|sys}`)
+* Net-SNMP 5.8 daemon patched to be able to monitor on CoreOS (use `/rootfs/{dev|etc|proc|sys}`)
 * Fix [CVE-2018-18066](https://nvd.nist.gov/vuln/detail/CVE-2018-18066)
 * IPv6 disabled
 
@@ -15,7 +15,7 @@
 
 ## Usage
 
-> :warning: snmpd has been patched to use ` /rootfs/{dev|etc|proc|sys}`.
+warning: snmpd has been patched to use ` /rootfs/{dev|etc|proc|sys}`.
 
 ### Docker Compose
 
@@ -36,7 +36,7 @@ $ docker run -d --name snmpd \
   -p 161:161/udp \
   -v /:/rootfs:ro \
   -v /etc/localtime:/etc/localtime:ro \
-  crazymax/snmpd:latest
+  nbharadwaj/net-snmpd:0.1
 ```
 
 You can also mount your own `snmpd.conf` :
@@ -48,7 +48,7 @@ $ docker run -d --name snmpd \
   -v /:/rootfs:ro \
   -v /etc/localtime:/etc/localtime:ro \
   -v $(pwd)/snmpd.conf:/etc/snmpd.conf \
-  crazymax/snmpd:latest
+  nbharadwaj/net-snmpd:0.1
 ```
 
 ## Notes
